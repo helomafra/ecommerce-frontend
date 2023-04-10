@@ -7,6 +7,9 @@ import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { useState, useEffect } from 'react';
 
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+
 import { api } from '../../services/api';
 
 export function Cart() {
@@ -31,15 +34,15 @@ export function Cart() {
 
   async function handleNewOrder() {
     if (!name) {
-      return alert('Digite seu nome.');
+      return toast.error('Digite seu nome.');
     }
 
     if (!date) {
-      return alert('Selecione uma data de entrega futura!');
+      return toast.error('Selecione uma data de entrega futura!');
     }
 
     if (!cartItem) {
-      return alert('Selecione ao menos um item para finalizar a compra.');
+      return toast.error('Selecione ao menos um item para finalizar a compra.');
     }
 
     try {
@@ -49,13 +52,16 @@ export function Cart() {
         products: cartItem
       });
 
-      alert('Pedido criado com sucesso!');
-      navigate(-1);
+      toast.success('Pedido criado com sucesso!');
+
+      setTimeout(() => {
+        navigate(-1);
+      }, '4000');
     } catch (error) {
       if (error.response) {
-        alert(error.response.data.message);
+        toast.error(error.response.data.message);
       } else {
-        alert('Não foi possível fazer pedido.');
+        toast.error('Não foi possível fazer pedido.');
       }
     }
   }
@@ -108,6 +114,8 @@ export function Cart() {
             onClick={handleNewOrder}
           />
         </div>
+
+        <ToastContainer position="top-center" />
       </main>
     </Container>
   );
