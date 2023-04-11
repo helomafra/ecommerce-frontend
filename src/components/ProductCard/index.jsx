@@ -11,7 +11,7 @@ export function ProductCard({ data, ...rest }) {
       <div className="info">
         <p>
           <span>R$</span>
-          {data.price
+          {Number(data.price)
             .toLocaleString('pt-BR', {
               style: 'currency',
               currency: 'BRL'

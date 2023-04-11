@@ -38,7 +38,7 @@ export function CartItem({ data, refetch }) {
       <div className="quantity">
         <p>
           <span>R$</span>
-          {data.price
+          {Number(data.price)
             .toLocaleString('pt-BR', {
               style: 'currency',
               currency: 'BRL'
