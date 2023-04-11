@@ -8,13 +8,7 @@ export const Container = styled.div`
   grid-template-rows: 93px auto;
   grid-template-areas:
     'header'
-    /* 'search' */
     'main';
-
-  /* > .search {
-    grid-area: search;
-    padding: 32px 32px 0;
-  } */
 
   > main {
     grid-area: main;

@@ -1,14 +1,10 @@
-import { Container } from './styles';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Container } from './styles';
 
-import { Input } from '../Input';
 import { Button } from '../Button';
 
 import Logo from '../../assets/logo.svg';
-import { FiSearch, FiShoppingCart } from 'react-icons/fi';
-
-import { api } from '../../services/api';
+import { FiShoppingCart } from 'react-icons/fi';
 
 export function Header() {
   const navigate = useNavigate();
@@ -24,20 +20,10 @@ export function Header() {
     navigate('/stock');
   }
 
-  // async function fetchSearchProducts(e) {
-  //   const search = await api.get(`/products/search?title=${e}`);
-  // }
-
   return (
     <Container>
       <div className="logo">
         <img src={Logo} alt="Logo Shopper" onClick={handleBackHome} />
-        {/* 
-        <Input
-          placeholder="Pesquisar produto"
-          icon={FiSearch}
-          onChange={(e) => fetchSearchProducts(e.target.value)}
-        /> */}
       </div>
 
       <div className="buttons">

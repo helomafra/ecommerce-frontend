@@ -22,4 +22,3 @@ https://shoppertest.vercel.app/
 
 - Clonar este repositório
 - Executar `npm install`
-- Rodar `npm start`

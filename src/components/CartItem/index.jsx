@@ -1,11 +1,10 @@
 import { Container } from './styles';
+import { Button } from '../Button';
 
 import { FiTrash2 } from 'react-icons/fi';
-
 import Product from '../../assets/product.svg';
 import Plus from '../../assets/plus-circle.svg';
 import Minus from '../../assets/minus-circle.svg';
-import { Button } from '../Button';
 
 import { api } from '../../services/api';
 
