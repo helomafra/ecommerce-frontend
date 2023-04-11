@@ -2,7 +2,7 @@ import { Container } from './styles';
 
 import Product from '../../assets/product.svg';
 
-export function StockItem({ data, ...rest }) {
+export function StockItem({ data }) {
   return (
     <Container>
       <img src={Product} alt="" />

@@ -19,9 +19,22 @@ export const Container = styled.div`
 
       h2 {
         font-weight: 600;
-        font-size: 20px;
+        font-size: 25px;
         color: ${({ theme }) => theme.COLORS.GRAY_400};
         margin-bottom: 24px;
+      }
+
+      .empty-cart {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 12px;
+        color: ${({ theme }) => theme.COLORS.GRAY_400};
+
+        h3 {
+          margin-top: 32px;
+          font-weight: 500;
+        }
       }
     }
 

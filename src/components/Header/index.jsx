@@ -25,16 +25,15 @@ export function Header() {
   }
 
   // async function fetchSearchProducts(e) {
-  //   console.log(e);
-  //   await api.get(`/products/search?title=${e}`);
+  //   const search = await api.get(`/products/search?title=${e}`);
   // }
 
   return (
     <Container>
       <div className="logo">
         <img src={Logo} alt="Logo Shopper" onClick={handleBackHome} />
-
-        {/* <Input
+        {/* 
+        <Input
           placeholder="Pesquisar produto"
           icon={FiSearch}
           onChange={(e) => fetchSearchProducts(e.target.value)}

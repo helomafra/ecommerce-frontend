@@ -9,8 +9,12 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 import { api } from '../../services/api';
 
+import { Input } from '../../components/Input';
+import { FiSearch, FiShoppingCart } from 'react-icons/fi';
+
 export function Home() {
   const [cards, setCards] = useState([]);
+  const [search, setSearch] = useState('');
 
   async function handleAddToCart(id, name) {
     await api.post(`/cart/${id}`);
@@ -19,6 +23,7 @@ export function Home() {
 
   async function fetchCards() {
     const response = await api.get(`/products`);
+
     setCards(response.data);
   }
 
@@ -28,7 +33,15 @@ export function Home() {
 
   return (
     <Container>
-      <Header refetch={fetchCards} />
+      <Header />
+
+      {/* <div className="search">
+        <Input
+          placeholder="Pesquisar produto"
+          icon={FiSearch}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div> */}
 
       <main>
         {cards.map((card) => (

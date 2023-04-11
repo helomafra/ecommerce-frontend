@@ -9,7 +9,7 @@ import { Button } from '../Button';
 
 import { api } from '../../services/api';
 
-export function CartItem({ data, refetch, ...rest }) {
+export function CartItem({ data, refetch }) {
   async function handleDeleteAll() {
     await api.delete(`/cart/removeAll/${data.productId}`);
     await refetch();
@@ -28,7 +28,7 @@ export function CartItem({ data, refetch, ...rest }) {
   return (
     <Container>
       <div className="info">
-        <img src={Product} alt="" />
+        <img src={Product} alt="Imagem de um pacote de embalagem" />
 
         <h3>{data.name}</h3>
 

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Container } from './styles';
 import { useNavigate } from 'react-router-dom';
 
@@ -5,7 +6,8 @@ import { Header } from '../../components/Header';
 import { CartItem } from '../../components/CartItem';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
-import { useState, useEffect } from 'react';
+
+import emptyCart from '../../assets/empty-cart.svg';
 
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -56,7 +58,7 @@ export function Cart() {
 
       setTimeout(() => {
         navigate(-1);
-      }, '4000');
+      }, '3000');
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message);
@@ -73,6 +75,17 @@ export function Cart() {
       <main>
         <div className="cart">
           <h2>Carrinho</h2>
+
+          {cartItem.length === 0 && (
+            <div className="empty-cart">
+              <h3> Ops! Carrinho vazio!</h3>
+              <p>Adicione ao menos um item para continuar.</p>
+              <img
+                src={emptyCart}
+                alt="Imagem de moça com carrinho finalizando compra"
+              />
+            </div>
+          )}
 
           {cartItem.map((item) => (
             <CartItem
