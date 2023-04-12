@@ -16,7 +16,7 @@ Desenvolvido para participação no processo seletivo da empresa Shopper.com.br.
 
 https://shoppertest.vercel.app/
 
-![App Screenshot](https://i.imgur.com/jKjgwdJ.png)
+![App Screenshot](https://i.imgur.com/iOfCQ5P.png)
 
 ## Documentação de Funcionamento
 
