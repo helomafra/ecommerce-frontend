@@ -57,7 +57,7 @@ export function Cart() {
       toast.success('Pedido criado com sucesso!');
 
       setTimeout(() => {
-        navigate(-1);
+        navigate('/');
       }, '3000');
     } catch (error) {
       if (error.response) {
